@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Project Build Roadmap - Divyant Pratap</title>
+<meta name="description" content="Build roadmap for Divyant Pratap's credit-card fraud and flight-fare machine-learning portfolio projects." />
+<style>
+  :root{--bg:#fbfaf7;--card:#fff;--ink:#15211d;--muted:#61706a;--accent:#157a5b;--soft:#e7f2ec;--gold:#9a6d19;--line:#e1e7e3;--max:940px}
+  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.65}
+  a{color:var(--accent);font-weight:700;text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:auto;padding:0 24px} header{padding:56px 0 36px;border-bottom:1px solid var(--line)}
+  .back{font-size:14px}.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:30px 0 8px}
+  h1,h2,h3{font-family:Georgia,serif;line-height:1.15}h1{font-size:clamp(36px,7vw,62px);margin:0;max-width:800px}header p{color:var(--muted);font-size:19px;max-width:760px}
+  main{padding:46px 0 80px}.project{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;margin:0 0 28px;box-shadow:0 12px 34px rgba(20,33,29,.06)}
+  h2{font-size:30px;margin:0 0 8px}.lead{color:var(--muted);font-size:17px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{background:var(--soft);border-radius:12px;padding:18px}
+  h3{font-size:18px;margin:0 0 10px}ul,ol{padding-left:20px;margin:8px 0}li{margin:6px 0}.done{border-left:4px solid var(--accent);padding-left:16px}
+  .tag{display:inline-block;background:var(--soft);color:var(--accent);font-weight:800;font-size:12px;border-radius:999px;padding:5px 10px;margin:0 6px 6px 0}
+  footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:13px;text-align:center}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}.project{padding:22px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="back" href="portfolio.html#projects">&larr; Back to portfolio</a><p class="eyebrow">Portfolio roadmap</p><h1>Two projects, built to be verifiable.</h1><p>The repositories will be public only when the evaluation is reproducible, the demo works, and every resume claim is backed by an artifact.</p></div></header>
+<main class="wrap">
+  <article class="project" id="credit-card-fraud">
+    <span class="tag">Classification</span><span class="tag">Imbalanced data</span><span class="tag">Explainable AI</span>
+    <h2>Credit-card fraud risk lab</h2>
+    <p class="lead">A production-style fraud investigation app: PyCaret as the AutoML baseline, then leakage-safe resampling, calibrated risk, cost-aware thresholds, and SHAP explanations.</p>
+    <div class="grid">
+      <section><h3>Build</h3><ol><li>Validate and split the 284,807-transaction dataset.</li><li>Compare naive, logistic, PyCaret, and tree-model baselines.</li><li>Keep resampling inside training folds.</li><li>Calibrate probabilities and tune the review threshold.</li><li>Build the Streamlit investigation queue and explanations.</li></ol></section>
+      <section class="panel"><h3>Evidence that will ship</h3><ul><li>PR-AUC, recall, precision, false positives per 1,000, and expected cost.</li><li>Threshold trade-off and stability slices.</li><li>Tests, Docker, CI, model card, screenshots, repository, and live demo.</li></ul></section>
+    </div>
+    <p class="done"><strong>Definition of done:</strong> the app runs from a clean checkout, evaluation is reproducible, and the resume uses verified PR-AUC/recall/cost metrics instead of a misleading accuracy headline.</p>
+  </article>
+  <article class="project" id="flight-fare">
+    <span class="tag">Regression</span><span class="tag">AutoML</span><span class="tag">Prediction intervals</span>
+    <h2>Flight-fare intelligence</h2>
+    <p class="lead">A fare estimator and scenario explorer on 300K+ records, with temporal validation, route-aware feature engineering, Auto-Sklearn comparison, error slicing, and prediction ranges.</p>
+    <div class="grid">
+      <section><h3>Build</h3><ol><li>Create a leakage-safe time split and route/airline baselines.</li><li>Engineer booking horizon, timing, route, stops, class, and duration.</li><li>Compare Auto-Sklearn with a strong transparent baseline.</li><li>Add interval estimates and segment-level error analysis.</li><li>Build the Streamlit quote and scenario-explorer interface.</li></ol></section>
+      <section class="panel"><h3>Evidence that will ship</h3><ul><li>MAE, median AE, RMSE, MAPE/wMAPE, and interval coverage.</li><li>Error slices by route, airline, class, stops, and booking horizon.</li><li>Tests, Docker, CI, model card, screenshots, repository, and live demo.</li></ul></section>
+    </div>
+    <p class="done"><strong>Definition of done:</strong> MAE below INR 2,500 is retained on the resume only if the untouched test-set evaluation reproduces it.</p>
+  </article>
+  <article class="project" id="saarthi"><h2>Saarthi publication checkpoint</h2><p class="lead">Keep proprietary books and the 1.6 GB PDF corpus private. Publish clean application code, safe sample data, screenshots, architecture, tests, and a demo that does not expose copyrighted material.</p></article>
+  <article class="project" id="ab-test"><h2>A/B Test Analyzer publication checkpoint</h2><p class="lead">The local tested application is ready for repository cleanup, screenshots, a public push, and a free Streamlit deployment.</p></article>
+</main>
+<footer><div class="wrap">Divyant Pratap - personal project roadmap</div></footer>
+</body>
+</html>
